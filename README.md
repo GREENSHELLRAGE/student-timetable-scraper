@@ -31,3 +31,5 @@ The strings ```"CUNET\your_user_name"``` and ```"your_password"``` must be encod
 # Known Issues
 
 Sometimes Carleton Central will force you to confirm your personal information before letting you use the rest of the site, and this will cause the login code to crash. If this happens, log into Carleton Central normally through your browser and click Continue until you reach the main menu. Once you can access the main menu the Python scripts should work again.
+
+The login code will also crash if Carleton even slightly changes the login process. When this happens, I will need to update the login code before it works again.
