@@ -24,6 +24,6 @@ The strings ```"CUNET\your_user_name"``` and ```"your_password"``` must be encod
 
 ```timetablescraper.py``` -> downloads your student timetable from Carleton Central and saves it as ```centraltimetable.html```
 
-```gradescraper.py``` -> downloads your grades from all of your courses from Brightspace and saves it as ```centraltimetable.html```
+```gradescraper.py``` -> downloads your grades from all of your courses from Brightspace and saves it as ```brightspacegrades.html```
 
 ```finalgradescraper.html``` -> downloads your final grades from Carleton Central and saves them in multiple files, 1 for each semester
