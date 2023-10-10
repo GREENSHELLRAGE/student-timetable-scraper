@@ -1,4 +1,8 @@
 # Student Timetable Scraper
+The Carleton Central and BrightSpace websites SUCK, it feels like they log you out EVERY 5 NANOSECONDS!
+
+So I made this...
+
 These Python scripts log in to Carleton Central and Brightspace and can be used to get your student timetable and grades. Since the Brightspace API is not available to students, I had to reverse engineer the login process using Google Chrome's inspect tool, so the login code may be slightly cryptic. It basically "emulates" what your browser does when you enter your username and password and log in normally.
 
 At some point I should probably turn this into a proper Python package that can be installed using ```pip install```, but for now it's just a few crappy Python scripts.
