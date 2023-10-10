@@ -27,3 +27,7 @@ The strings ```"CUNET\your_user_name"``` and ```"your_password"``` must be encod
 ```gradescraper.py``` -> downloads your grades from all of your courses from Brightspace and saves it as ```brightspacegrades.html```
 
 ```finalgradescraper.html``` -> downloads your final grades from Carleton Central and saves them in multiple files, 1 for each semester
+
+# Known Issues
+
+Sometimes Carleton Central will force you to confirm your personal information before letting you use the rest of the site, and this will cause the login code to crash. If this happens, log into Carleton Central normally through your browser and click Continue until you reach the main menu. Once you can access the main menu the Python scripts should work again.
