@@ -18,7 +18,7 @@ You'll also need to create a ```cridentials.json``` file in the same directory a
   "password": "your_password"
 }
 ```
-The strings ```"CUNET\your_user_name"``` and ```"your_password"``` must be encoded in base64.
+The strings ```"CUNET\your_user_name"``` and ```"your_password"``` must be encoded in base64, which you can do [here](https://amp.base64encode.org/).
 
 # Usage
 
