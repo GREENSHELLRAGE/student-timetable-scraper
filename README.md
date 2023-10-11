@@ -1,5 +1,5 @@
 # Student Timetable Scraper
-The Carleton Central and BrightSpace websites SUCK, it feels like they log you out EVERY 5 NANOSECONDS!
+The Carleton Central and Brightspace websites SUCK, it feels like they log you out EVERY 5 NANOSECONDS!
 
 So I made this...
 
