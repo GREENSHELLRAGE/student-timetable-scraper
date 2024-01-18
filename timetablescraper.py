@@ -50,6 +50,7 @@ full_building_names = {
     'SA': 'SA Southam Hall (Kailash Mital Theatre)',
     'SC': 'SC Steacie Building',
     'SR': 'SR Social Science Research Building',
+    'TBA': 'To be announced...',
     'TB': 'TB Tory Building',
     'TT': 'TT Carleton Technology & Training Center',
     'UC': 'UC University Centre',
