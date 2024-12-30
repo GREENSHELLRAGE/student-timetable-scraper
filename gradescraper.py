@@ -2,6 +2,7 @@
 # python3 gradescraper.py
 import base64
 import json
+from threading import Thread
 from bs4 import BeautifulSoup
 from CarletonTools import *
 
@@ -38,9 +39,11 @@ for element in soup.find_all('a', {'class', 'd2l-link'}, onclick=False):
     course_id = element['href'][41:]
     grade_page_urls.append('https://brightspace.carleton.ca/d2l/lms/grades/my_grades/main.d2l?ou=' + course_id)
 
-# Get all grades for all courses and create webpage
+# Append the custom header banner
 generated_grade_page_html = '<h1>Brightspace Sucks lol</h1>'
-for x in range(len(grade_page_urls)):
+
+# Fetch a full grades table from a Brightspace course. This function contains the same code that Alex wrote, just separated into a function
+def fetch_single_grade(x):
     # Load grades page
     print('Loading course ' + str(x + 1) + '/' + str(len(grade_page_urls)) + '...')
     grade_page_html = scraper.get_carleton_page(grade_page_urls[x])
@@ -52,8 +55,28 @@ for x in range(len(grade_page_urls)):
     
     # Only add course to the webpage if brightspace has the grades table for that course
     if grades_table != "None":
+        global generated_grade_page_html    # Get the generated_grade_page_html variable from the global scope
         generated_grade_page_html += '<h2><a href="' + grade_page_urls[x] + '">' + course_name + '</a></h2><br><br>'
         generated_grade_page_html += grades_table + '<br><br>'
+
+# Get all grades for all courses and create webpage
+threads = []
+for x in range(len(grade_page_urls)):
+    # Create a thread with the current value of x
+    t = Thread(target=fetch_single_grade, kwargs={"x": x})
+
+    # Start the thread (this will call the fetch_single_grade function)
+    t.start()
+    threads.append(t)
+
+# Join all threads back into the main thread
+if len(threads) != 0:
+    for t in threads:
+        t.join()
+else:
+    print('Threads list is empty, no need to join')
+
+print('Done!')
 
 patched_html = patch_brightspace_page(generated_grade_page_html)
 
